@@ -1,0 +1,13 @@
+.footer{
+    position: fixed;
+    top: calc(100vh - 18px);
+    width: 100vw;
+    background: #000000;
+    text-align: center;
+}
+
+.footer a{
+    color: #ffffff;
+    font-family: 'Josefin Sans', sans-serif;
+    text-decoration: none;
+}
