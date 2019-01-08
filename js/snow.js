@@ -1,9 +1,12 @@
-console.log("startSnow() can snow!");
 let isSnowing = false;
 function startSnow(){
+    let now = new Date();
+    let nowMonth = now.getMonth() + 1;
+    let nowDate = now.getDate();
     if(isSnowing){
         console.log("now snowing!");
-    } else {
+    } else if((nowMonth >= 12 && nowMonth <= 12) && (nowDate >= 25 && nowDate <= 25)){
+        console.log("Merry Christmas!!!");
         isSnowing = true;
         function getRand(){
             let randNum;
@@ -69,3 +72,5 @@ function startSnow(){
         }
     }
 }
+
+startSnow();
