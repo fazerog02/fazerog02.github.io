@@ -1,0 +1,13 @@
+.snow{
+    background-image: url("../img/snow_image.png");
+    height: 20px;
+    width: 20px;
+    margin: 0px;
+}
+
+.snowBig{
+    background-image: url("../img/snowBig_image.png");
+    height: 30px;
+    width: 30px;
+    margin: 0px;
+}
