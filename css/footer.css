@@ -1,8 +1,7 @@
 .footer{
     position: fixed;
-    top: calc(100vh - 25px);
+    bottom: 0px;
     width: 100vw;
-    height: 25px;
     background: #000000;
     text-align: center;
 }
