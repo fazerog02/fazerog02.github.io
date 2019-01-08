@@ -22,13 +22,16 @@ function startSnow(){
         }
 
         function getRandBig(){
-            return Math.floor(Math.random() * 100);
+            return Math.floor(Math.random() * 101);
         }
-        let howMany = 100;
+        let howMany = 50;
         let snowList = new Array([]);
         let snowXList = new Array([]);
         let snowYList = new Array([]);
-        let snowDiv = document.getElementById('snow');
+        let snowDiv = document.createElement('div');
+        snowDiv.id = "snow";
+        document.body.appendChild(snowDiv);
+        snowDiv = document.getElementById("snow");
         let xCounter = 0;
         let snowClass;
         initSnow();
@@ -41,10 +44,10 @@ function startSnow(){
                     snowClass = "snow";
                 }
                 snow.id = "snow" + i;
-                snow.style.position = 'absolute';
+                snow.style.position = 'fixed';
                 snowYList[i] = getRandBig() * -2;
                 snow.style.top = snowYList[i] + 'vh';
-                snowXList[i] = getRand() * 10;
+                snowXList[i] = getRandBig();
                 snow.style.left = snowXList[i] + 'vw';
                 snow.className = snowClass;
                 snowDiv.appendChild(snow);
