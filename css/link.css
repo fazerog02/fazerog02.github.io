@@ -1,0 +1,59 @@
+.icons a{
+    height: 200px;
+    width: 200px;
+    display: block;
+    border-radius: 50%;
+}
+
+#twitter-icon{
+    position: relative;
+    left: calc(50% - 100px);
+    height: 200px;
+    width: 200px;
+    background-image: url("../img/Twitter_Logo_WhiteOnBlue.png");
+    background-size: 100%;
+    margin-top: 50px;
+    border-radius: 50%;
+    transition: transform 300ms 0s ease, box-shadow 300ms 0s ease;
+    transform-origin: center;
+}
+
+#twitter-icon:hover{
+    box-shadow: 0px 0px 16px gray;
+    transform: scale(1.1, 1.1);
+}
+
+#github-icon{
+    position: relative;
+    left: calc(50% - 100px);
+    height: 200px;
+    width: 200px;
+    background-image: url("../img/GitHub-Mark-120px-plus.png");
+    background-size: 100%;
+    margin-top: 50px;
+    border-radius: 50%;
+    transition: transform 300ms 0s ease, box-shadow 300ms 0s ease;
+}
+
+#github-icon:hover{
+    box-shadow: 0px 0px 16px gray;
+    transform: scale(1.1, 1.1);
+}
+
+#atcoder-icon{
+    position: relative;
+    left: calc(50% - 100px);
+    height: 200px;
+    width: 200px;
+    background: black;
+    background-image: url("../img/atcoder-logo.png");
+    background-size: 100%;
+    margin-top: 50px;
+    border-radius: 50%;
+    transition: transform 300ms 0s ease, box-shadow 300ms 0s ease;
+}
+
+#atcoder-icon:hover{
+    box-shadow: 0px 0px 16px gray;
+    transform: scale(1.1, 1.1);
+}
