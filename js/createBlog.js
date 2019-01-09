@@ -2,10 +2,11 @@ let realTimePreview = setInterval(preview, 1000);
 let previewArea = document.getElementById("previewArea");
 
 let inputText = document.getElementById("editBlog");
+let previewText;
 function preview(){
     if(document.getElementById("isRealTime").checked){
-        let inputText = document.getElementById("editBlog");
-        let text =
+        inputText = document.getElementById("editBlog");
+        previewText =
             "<div class='header-pre'>\n" +
             "    <h1><a href='/'>FazRoom</a></h1>\n" +
             "    <div id='header-menu-pre'>\n" +
@@ -33,7 +34,7 @@ function preview(){
             "<div class='footer-pre'>\n" +
             "    <a href='about'>©2019 fazerog</a>\n" +
             "</div>";
-        previewArea.innerHTML = text;
+        previewArea.innerHTML = previewText;
     }
 }
 
