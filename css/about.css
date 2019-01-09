@@ -1,0 +1,38 @@
+#fazerog-icon{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-image: url("../img/fazerog.png");
+    background-size: 100%;
+    position: relative;
+    margin: 50px;
+    left: calc(50% - 150px);
+}
+
+#fazerog-name{
+    text-align: center;
+    font-size: 200%;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-bottom: 50px;
+}
+
+.about-title{
+    margin: 20px;
+    font-size: 150%;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.about-text{
+    font-family: 'Josefin Sans', sans-serif;
+    position: relative;
+    left: 10vw;
+}
+
+.about-text ul{
+    padding: 0px;
+    margin: 10px;
+}
+
+.about-text li{
+    padding-bottom: 10px;
+}
