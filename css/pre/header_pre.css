@@ -1,0 +1,112 @@
+.header-pre{
+    position: relative;
+    top: 0px;
+    background: #ffffff;
+    height: 75px;
+    width: 100%;
+    margin: 0px;
+    box-shadow: 0px 8px 16px lightgray;
+    opacity: 0.8;
+    z-index: 100;
+}
+
+.header-pre h1{
+    margin: 0px;
+    position: relative;
+    top: 30%;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.header-pre h1 a{
+    text-decoration: none;
+    color: red;
+}
+
+/*header menu PC*/
+
+.header-box-about-pre{
+    width: 75px;
+    height: 75px;
+    background: yellow;
+    margin: 0px;
+    position: relative;
+    top: 0px;
+    left: calc(100% - 75px);
+    transition: all 300ms 0s ease;
+}
+
+.header-box-about-pre:hover{
+    height: 200px;
+    box-shadow: 0px 16px 16px -8px lightgray;
+}
+
+.header-box-about-pre span{
+    transform: rotateZ(90deg);
+    display: none;
+}
+
+.header-box-about-pre span:hover{
+    display: inline;
+    color: #000000;
+}
+
+
+.header-box-link-pre{
+    width: 75px;
+    height: 75px;
+    background: greenyellow;
+    margin: 0px;
+    position: relative;
+    top: 0px;
+    left: calc(100% - 150px);
+    transition: all 300ms 0s ease;
+    box-shadow: 0px 16px 16px -8px lightgray;
+}
+
+.header-box-link-pre:hover{
+    height: 200px;
+}
+
+
+.header-box-projects-pre{
+    width: 75px;
+    height: 75px;
+    background: deepskyblue;
+    margin: 0px;
+    position: relative;
+    top: 0px;
+    left: calc(100% - 225px);
+    transition: all 300ms 0s ease;
+    box-shadow: 0px 16px 16px -8px lightgray;
+}
+
+.header-box-projects-pre:hover{
+    height: 200px;
+}
+
+
+.header-box-text-pre{
+    position: relative;
+    top: 0px;
+    color: #000000;
+    width: 75px;
+    height: 75px;
+    opacity: 0;
+    text-decoration: none;
+    writing-mode: vertical-lr;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.header-box-text-pre:hover{
+    transition: opacity 400ms 150ms ease;
+    height: 200px;
+    opacity: 1;
+    font-size: 250%;
+}
+
+/*header menu PC end*/
+
+#sideNav-pre{
+    margin: 0px;
+
+}
