@@ -1,3 +1,7 @@
+.icons{
+    text-align: center;
+}
+
 .icons a{
     height: 200px;
     width: 200px;
@@ -7,53 +11,58 @@
 
 #twitter-icon{
     position: relative;
-    left: calc(50% - 100px);
+    left: calc(50% - 150px);
     height: 200px;
     width: 200px;
     background-image: url("../img/Twitter_Logo_WhiteOnBlue.png");
     background-size: 100%;
-    margin-top: 50px;
+    margin: 50px;
     border-radius: 50%;
     transition: transform 300ms 0s ease, box-shadow 300ms 0s ease;
     transform-origin: center;
 }
 
 #twitter-icon:hover{
-    box-shadow: 0px 0px 16px gray;
-    transform: scale(1.1, 1.1);
+    box-shadow: 0px 0px 16px 4px gray;
+    transform: scale(1.2, 1.2) rotateZ(10deg);
 }
 
 #github-icon{
     position: relative;
-    left: calc(50% - 100px);
+    left: calc(50% - 150px);
     height: 200px;
     width: 200px;
     background-image: url("../img/GitHub-Mark-120px-plus.png");
     background-size: 100%;
-    margin-top: 50px;
+    margin: 50px;
     border-radius: 50%;
     transition: transform 300ms 0s ease, box-shadow 300ms 0s ease;
 }
 
 #github-icon:hover{
-    box-shadow: 0px 0px 16px gray;
-    transform: scale(1.1, 1.1);
+    box-shadow: 0px 0px 16px 4px gray;
+    transform: scale(1.2, 1.2) rotateZ(10deg);
 }
 
 #atcoder-icon{
     position: relative;
-    left: calc(50% - 100px);
+    left: calc(50% - 150px);
     height: 200px;
     width: 200px;
     background: black;
     background-image: url("../img/atcoder-logo.png");
     background-size: 100%;
-    margin-top: 50px;
+    margin: 50px;
     border-radius: 50%;
     transition: transform 300ms 0s ease, box-shadow 300ms 0s ease;
 }
 
 #atcoder-icon:hover{
-    box-shadow: 0px 0px 16px gray;
-    transform: scale(1.1, 1.1);
+    box-shadow: 0px 0px 16px 4px gray;
+    transform: scale(1.2, 1.2) rotateZ(10deg);
+}
+
+.link-text{
+    margin: 20px;
+    font-size: 200%;
 }

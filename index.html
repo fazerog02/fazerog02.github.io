@@ -34,6 +34,21 @@
 <div id="header-sideNav" class="close"></div>
 <div id="content">
     <div class="content-title">HOME</div>
+    <span id="h"></span>:<span id="m"></span>:<span id="s"></span>
+    <script>
+        let h = document.getElementById("h"), m = document.getElementById("m"), s = document.getElementById("s");
+        let now, NowH, NowM, NowS;
+        setInterval(nowTime, 1000);
+        function nowTime() {
+            now = new Date();
+            NowH = now.getHours();
+            NowM = now.getMinutes();
+            NowS = now.getSeconds();
+            h.innerText = NowH;
+            m.innerText = NowM;
+            s.innerText = NowS;
+        }
+    </script>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 <div class="footer">
