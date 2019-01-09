@@ -1,0 +1,26 @@
+#editBlog{
+    height: 100vh;
+    width: 100%;
+}
+
+#previewArea{
+
+}
+
+#downloadButton{
+    margin-top: 50px;
+    height: 100px;
+    width: 100%;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+#downloadHtml{
+    height: 100px;
+    width: 100%;
+    position: relative;
+    top: 40%;
+    display: block;
+    text-decoration: none;
+}
