@@ -14,9 +14,9 @@ headerSource.innerHTML = "<h1><a href=\"/\">FazRoom</a></h1>\n" +
     "    <div class=\"header-box-text\">LINK</div>\n" +
     "    </div>\n" +
     "    </a>\n" +
-    "    <a href=\"/projects\">\n" +
-    "    <div class=\"header-box-projects\">\n" +
-    "    <div class=\"header-box-text\">PROJECTS</div>\n" +
+    "    <a href=\"/products\">\n" +
+    "    <div class=\"header-box-products\">\n" +
+    "    <div class=\"header-box-text-products\">PRODUCTS</div>\n" +
     "    </div>\n" +
     "    </a>\n" +
     "</div>\n" +
