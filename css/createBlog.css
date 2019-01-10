@@ -20,8 +20,13 @@
 #downloadHtml{
     height: 100px;
     width: 100%;
-    position: relative;
-    top: 40%;
     display: block;
     text-decoration: none;
+}
+
+#downloadHtml span{
+    position: relative;
+    top: 30%;
+    font-size: 200%;
+    font-family: Cantarell;
 }
