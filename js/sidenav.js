@@ -10,7 +10,7 @@ window.onload = function(){
         document.getElementById("header-sideNav").innerHTML =
             "<div class='header-sideNav-content-div'><a href='/about' class='header-sideNav-content'>ABOUT</a>" +
             "<div class='header-sideNav-content-div'><a href='/link' class='header-sideNav-content'>LINK</a>" +
-            "<div class='header-sideNav-content-div'><a href='/projects' class='header-sideNav-content'>PROJECTS</a>";
+            "<div class='header-sideNav-content-div'><a href='/products' class='header-sideNav-content'>PRODUCTS</a>";
         let button = document.getElementById("header-sideNav-button");
         button.style.position = 'absolute';
         button.style.top = '0px';
