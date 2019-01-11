@@ -5,12 +5,29 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
-.products-about{
+.products-about-button{
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    background-color: black;
+    text-align: center;
+    box-shadow: 6px 6px 8px lightgray;
+}
+
+.products-about-button span{
     position: relative;
-    left: 90%;
-    text-decoration: none;
-    display: block;
+    top: 20%;
+    color: white;
+    font-size: 150%;
     font-family: 'Josefin Sans', sans-serif;
+}
+
+.products-about-button:hover{
+    opacity: 0.7;
+}
+
+.products-about-button:active{
+    box-shadow: none;
 }
 
 #LiveEditHtml-icon{
@@ -35,4 +52,26 @@
     width: 200px;
     border-radius: 50%;
     display: block;
+}
+
+.description-title{
+    font-size: 200%;
+    border-bottom: 2px solid lightgray;
+    margin-bottom: 40px;
+    padding-bottom: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+}
+
+.description-text{
+    animation: description-text-animation 2s ease;
+}
+
+@keyframes description-text-animation{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
