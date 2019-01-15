@@ -43,6 +43,6 @@ let baseHeadContents =
     "    <link href=\"https://fonts.googleapis.com/css?family=Josefin+Sans\" rel=\"stylesheet\">\n" +
     "    <link rel=\"stylesheet\" href=\"css/header.css\" type=\"text/css\">\n" +
     "    <link rel=\"stylesheet\" href=\"css/footer.css\" type=\"text/css\">\n" +
-    "    <link rel=\"stylesheet\" href=\"css/content.css\" type=\"text/css\">\n";
-
+    "    <link rel=\"stylesheet\" href=\"css/content.css\" type=\"text/css\">\n" +
+    "    <link rel='stylesheet' href='/css/icons.css' type='text/css'>";
 head.insertAdjacentHTML('afterbegin', baseHeadContents);
