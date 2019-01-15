@@ -66,3 +66,10 @@
 .content-button:active{
     box-shadow: none;
 }
+
+.content-image-default{
+    width: 100%;
+    height: 300px;
+    background-image: url("../img/defaultBlogImage.jpg");
+    background-size: 100%;
+}
