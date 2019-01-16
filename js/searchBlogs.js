@@ -25,7 +25,7 @@ function searchBlogs(str){
     }
     if(searchResult_title.length <= 0){
         blogArea.innerHTML =
-            "<h1>お探しのブログは見つかりませんでした</h1>";
+            "<h2>お探しのブログは見つかりませんでした。<br>もう一度、検索文字を確認してください。</h2>";
     } else {
         blogArea.innerHTML = "";
     }
