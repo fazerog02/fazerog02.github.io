@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <title>FazRoom-Home</title>
     <script src="js/sidenav.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/icons.css">
 </head>
 <body>
 <div id="content">
     <div class="content-title">BLOGS</div>
     <div class="content-card">
+        <input type="search" id="searchWord">
+        <button id="searchSubmit" onclick="getSearchWord()">検索</button>
+    </div>
+    <div class="content-card" id="blogArea">
         <div class="content-card-title">HelloWorld!</div>
         <div class="content-image-default"></div>
         <div class="content-button"><a href="/blogs/2018_01_15_1416"><span>見る</span></a></div>
@@ -16,6 +21,7 @@
 </div>
 </body>
 
+<script src="js/searchBlogs.js" type="text/javascript"></script>
 <script src="js/base.js" type="text/javascript"></script>
 
 </html>

@@ -73,3 +73,37 @@
     background-image: url("../img/defaultBlogImage.jpg");
     background-size: 100%;
 }
+
+#searchWord{
+    border: none;
+    border-bottom: 2px solid gray;
+    width: 75%;
+    margin-right: 20px;
+    transition: border-bottom 200ms 0s;
+}
+
+#searchWord:focus{
+    outline: 0px;
+    border-bottom: 2px solid mediumaquamarine;
+}
+
+#searchSubmit{
+    position: relative;
+    right: 0px;
+    height: 30px;
+    border: none;
+    border-radius: 20%;
+    background-color: black;
+    color: white;
+    outline: 0px;
+    padding: 0px 7px 0px 7px;
+    box-shadow: 2px 2px 4px gray;
+}
+
+#searchSubmit:hover{
+    opacity: 0.8;
+}
+
+#searchSubmit:active{
+    box-shadow: 1px 1px 2px gray;
+}
