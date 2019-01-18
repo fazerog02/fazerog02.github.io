@@ -1,0 +1,42 @@
+#header-sideNav-button{
+    position: absolute;
+    top: 0px;
+    left: calc(100% - 75px);
+    margin: 0px;
+    font-size: 300%;
+}
+
+#header-sideNav{
+    position: fixed;
+    top: 75px;
+    right: 0px;
+    z-index: 100;
+    height: 100vh;
+    margin: 0px;
+    text-align: center;
+    background-color: black;
+    box-shadow: 0px 8px 16px lightgray;
+    transform-origin: right;
+}
+
+.header-sideNav-content{
+    margin-top: 75px;
+    height: 75px;
+    background-color: black;
+}
+
+.header-sideNav-content a{
+    width: 0px;
+    font-size: 200%;
+    color: white;
+    text-decoration: none;
+    height: 75px;
+}
+
+.close{
+    width: 0px;
+}
+
+.open{
+    width: 200px;
+}
