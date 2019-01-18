@@ -44,5 +44,6 @@ let baseHeadContents =
     "    <link rel=\"stylesheet\" href=\"../css/header.css\" type=\"text/css\">\n" +
     "    <link rel=\"stylesheet\" href=\"../css/footer.css\" type=\"text/css\">\n" +
     "    <link rel=\"stylesheet\" href=\"../css/content.css\" type=\"text/css\">\n" +
+    "    <link rel='stylesheet' href='../css/sidenav.css' type='text/css'>" +
     "    <link rel='stylesheet' href='../css/icons.css' type='text/css'>";
 head.insertAdjacentHTML('afterbegin', baseHeadContents);
