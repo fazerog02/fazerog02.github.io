@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FazRoom-KernelPanic!!</title>
+    <link rel="stylesheet" href="../css/blogs.css" type="text/css">
+</head>
+<body>
+<div id="content">
+    <div class="content-title">KernelPanic!!</div>
+    <div class="createdDate-icon-outCircle">
+        <div class="createdDate-icon-inCiecle">
+            <div class="createdDate-icon-longBar">
+                <div class="createdDate-icon-shortBar"></div>
+            </div>
+        </div>
+    </div>
+    <div class="createdDate">2019-02-27-18:01</div>
+    <div class="blogs-text">
+        今回は，ManjaroLinuxで発生したカーネルパニックを直す機会があったので，<br>
+        そのことについて書いていきます．<br>
+        <br>
+        <br>
+        僕が経験したカーネルパニックは，<font style="color: red;">Not syncing No init found</font>でした．<br>
+        <br>
+        直し方の結論から言うと，<font style="color:red;">GRUBが悪いので，GRUBからsystemd-bootに変更すれば直ります．</font>
+        <br>
+        手順は以下に書いて置きます．<br>
+        まず，システムを修理するために<a href="https://wiki.archlinux.jp/index.php/Change_Root">chroot</a>で中身をいじる準備をします．<br>
+        <br>
+        --chrootの手順--<br>
+        <br>
+        まず，インストールメディアを用意します．最初のインストールに使ったものがあればそれを使用してください．<br>
+        ない場合は，インストールメディアの作成をします．<br>
+        <br>
+        <br>
+        　　--インストールメディアの作成手順--<br>
+        <br>
+        まずは，osを手に入れます．<a href="https://manjaro.org/download/xfce/">Manjaro公式ページ</a>からダウンロードします．<br>
+        <br>
+        次に，空のUSB(4GB以上であれば何でも良いです)を用意して， それにosを書き込みます．書き込むには専用のソフトウェアが必要です．<br>
+        色々種類はあるのですが， 僕のオススメはシンプルなGUIで使いやすい<a href="https://www.balena.io/etcher/">etcher</a>です．<br>
+　　　　　<br>
+        USbに書き込めたら，インストールメディアの作成はそれで終了です．<br>
+        <br>
+        　　-----------------------------------------------------
+        <br>
+        <br>
+        次に，インストールメディアを起動します．方法はbootメニューでインストールメディアのUSBを選択するだけです．<br>
+        bootメニューに入る方法はpcによって違いますが，Thikpadの場合は起動時F12です．<br>
+        <br>
+        起動したら色々設定できる画面が出てくるので，キーボード配列をjpに変えてからbootなんちゃらを押してManjaroを起動します．<br>
+        起動が終わってデスクトップが表示されたら，一度ログアウト(シャットダウンではない)をします．<br>
+        ログアウトが終わったら，ユーザー名にroot，パスワードにmanjaroと入力してrootユーザーでログインします．<br>
+        ログインできたら，いよいよターミナルでの作業に入ります．<br>
+        <br>
+        まずは，/　ディレクトリとbootディレクトリの場所を探します．<br>
+        <br>
+        <div class="cord">
+            $ lsblk<br>
+            NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT<br>
+            nvme0n1     259:0    0 238.5G  0 disk<br>
+            ├─nvme0n1p1 259:1    0   300M  0 part /boot/efi<br>
+            ├─nvme0n1p2 259:2    0 229.4G  0 part /<br>
+            └─nvme0n1p3 259:3    0   8.8G  0 part [SWAP]<br>
+        </div>
+        <br>
+        このように，lsblkコマンドを使えば各ディレクトリがどこかわかります．<br>
+        今回，僕の場合は，/が "mvme0n1p2"，bootが "mvme0n1p1"ですね．<br>
+        これがわかったら，あとはコマンドを打っていくだけです．<br>
+        <br>
+        <div class="cord">
+            $ mount /dev/ルートディレクトリの場所 /mnt<br>
+            <br>
+            $ mount /dev/ブートディレクトリの場所 /mnt/boot<br>
+            <br>
+            $ cd /mnt<br>
+            <br>
+            $ mount -t proc proc proc/<br>
+            <br>
+            $ mount --rbind /sys sys/<br>
+            <br>
+            $ mount --rbind /dev dev/<br>
+            <br>
+            $ chroot /mnt /bin/bash<br>
+        </div>
+        <br>
+        これで，chrootの手順の説明は終了です．<br>
+        <br>
+        -----------------------<br>
+        <br>
+        これから，カーネルパニックの原因であるgrubからsystemd-bootへの切り替え作業を行います．<br>
+        まずは，<br>
+        <br>
+        <div class="cord">
+            $ bootclt install<br>
+        </div>
+        <br>
+        を入力，実行します．すると，色々なファイルが作成されるので，作成されたloader.confの中身を編集していきます．<br>
+        <br>
+        <div class="cord">
+            $ nano /boot/loader/loader.conf<br>
+        </div>
+        <br>
+        最初，loader.confの中身はこんな感じになっています．(違う場合もありますが，どうせ書き換えるので特に問題ないです．)<br>
+        <br>
+        <div class="cord">
+            #timeout 3<br>
+            default 43l34jkl32j4lk32<br>
+        </div>
+        <br>
+        それを，こう書き換えてください．<br>
+        <br>
+        <div class="cord">
+            default manjaro<br>
+            timeout 3<br>
+        </div>
+        <br>
+        書き終えたら，"CtrlとC", "Y", "Enter"を順に押してファイルを保存し<a href="https://ja.wikipedia.org/wiki/Nano_(%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF)">nano</a>を終了します．<br>
+        次は，confを作ります．<br>
+        <br>
+        <div class="cord">
+            $ touch /boot/loader/entries/manjaro.conf<br>
+        </div>
+        <br>
+        作成が終わったら，編集する前に/ディレクトリのUUIDやlinuxのバージョンなどを確認します．<br>
+        まずはUUIDから確認します．<br>
+        <br>
+        <div class="cord">
+            $ fdisk -l -o +UUID<br>
+            Disk /dev/nvme0n1: 238.5 GiB, 256060514304 bytes, 500118192 sectors<br>
+            Disk model: LENSE20256GMSP34MEAT2TA<br>
+            Units: sectors of 1 * 512 = 512 bytes<br>
+            Sector size (logical/physical): 512 bytes / 512 bytes<br>
+            I/O size (minimum/optimal): 512 bytes / 512 bytes<br>
+            Disklabel type: gpt<br>
+            Disk identifier: C00C21BA-5E58-4BA6-94A0-D7246616916D<br>
+            <br>
+            Device             Start       End   Sectors   Size Type UUID<br>
+            /dev/nvme0n1p1      4096    618495    614400   300M EFI  0A159E14-E587-41F9-A0B0-607A5A3CA62A<br>
+            /dev/nvme0n1p2    618496 481648510 481030015 229.4G Linu A18CF7F5-121F-4DAC-A332-0632FF0D18A9<br>
+            /dev/nvme0n1p3 481648511 500103449  18454939   8.8G Linu BC4A17B5-F6E2-4DB7-BBC4-6393B76DCEF4<br>
+        </div>
+        <br>
+        これの，/ディレクトリの場所のUUID(16進数の文字列)をメモしておきます．<br>
+        次に，linuxのバージョンを確認します．<br>
+        <br>
+        <div class="cord">
+            $ ls /boot<br>
+            efi<br>                                 intel-ucode.img<br>
+            grub             <br>                   linux419-x86_64.kver<br>
+            initramfs-4.19-x86_64-fallback.img<br>  memtest86+<br>
+            initramfs-4.19-x86_64.img<br>           vmlinuz-4.19-x86_64<br>
+        </div>
+        <br>
+        このvmlinuzのハイフンの後ろの部分の文字列と，initramfs(-fallbackがついていない方)のハイフンの後ろの文字列をメモしておきます．<br>
+        そうしたら，manjaro.confを編集していきます．<br>
+        <br>
+        <div class="cord">
+            $ nano /boot/loader/entries/manjaro.conf<br>
+        </div>
+        <br>
+        中身はこのようにしてください．<br>
+        <br>
+        <div class="cord">
+            title Manjarolinux<br>
+            linux /vmlinuz-先程のvmlinuzのハイフンの後ろの文字列<br>
+            initrd /initramfs-先程のinitramfsのハイフンの後ろの文字列.img<br>
+            options root=PARTUUID=先程のルートディレクトリの場所のUUID<br>
+        </div>
+        <br>
+        書き終えたら，"CtrlとC", "Y", "Enter"を順に押してファイルを保存し<a href="https://ja.wikipedia.org/wiki/Nano_(%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF)">nano</a>を終了します．<br>
+        最後に，<br>
+        <br>
+        <div class="cord">
+            $ pacman -Rcnsu grub<br>
+        </div>
+        <br>
+        を実行して，grubからsystemd-bootへの移行作業は終了です．<br>
+        その後，<br>
+        <br>
+        <div class="cord">
+            $ exit<br>
+            <br>
+            $ reboot now<br>
+        </div>
+        <br>
+        を実行して画面が真っ暗になったらUSBを抜き，そのまま少し待てばOS選択画面がでてくるので，<br>
+        Manjarolinuxを選択して正常に起動することが確認できたらカーネルパニックの修理は完了です．<br>
+        お疲れ様です．拙い文章でしたが長い間お付き合いしていただき，ありがとうございました．<br>
+        <br>
+        <br>
+        <br>
+        最後に<br>
+        <br>
+        今回は<a href="https://minfaox3.github.io">Minfaoxくん</a>に色々助けてもらいました．本当にありがとうございました．
+    </div>
+</div>
+</body>
+
+<script src="../js/base_for_deepDir.js" type="text/javascript"></script>
+<script src="../js/sidenav.js" type="text/javascript"></script>
+
+</html>

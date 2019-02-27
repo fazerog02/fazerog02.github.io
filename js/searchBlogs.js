@@ -1,8 +1,13 @@
 let blogList = [
     [
         'HelloWorld!',
-        new Date(2018, 1,15, 14, 16),
-        "/blogs/2018_01_15_1416",
+        new Date(2019, 1,15, 14, 16),
+        "/blogs/2019_01_15_1416",
+    ],
+    [
+        'KernelPanic!!',
+        new Date(2019, 2, 27, 18, 1),
+        "/blogs/2019_02_27_1801",
     ],
 ];
 
