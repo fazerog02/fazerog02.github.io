@@ -1,4 +1,4 @@
-let LiveEditHtml_card = document.getElementById("FazCO2Monitor-card");
+let LiveEditHtml_card = document.getElementById("LiveEditHtml-card");
 var LiveEditHtml_cardHtml;
 
 let FazCO2Monitor_card = document.getElementById("FazCO2Monitor-card");
