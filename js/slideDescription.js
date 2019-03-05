@@ -1,5 +1,8 @@
-let LiveEditHtml_card = document.getElementById("LiveEditHtml-card");
+let LiveEditHtml_card = document.getElementById("FazCO2Monitor-card");
 var LiveEditHtml_cardHtml;
+
+let FazCO2Monitor_card = document.getElementById("FazCO2Monitor-card");
+var FazCO2Monitor_cardHtml;
 
 function openSlideDescription_LiveEditHtml(){
     LiveEditHtml_cardHtml = LiveEditHtml_card.innerHTML;
@@ -18,4 +21,20 @@ function openSlideDescription_LiveEditHtml(){
 
 function closeSlideDescription_LiveEditHtml(){
     LiveEditHtml_card.innerHTML = LiveEditHtml_cardHtml;
+}
+
+function openSlideDescription_FazCO2Monitor(){
+    FazCO2Monitor_cardHtml = FazCO2Monitor_card.innerHTML;
+    FazCO2Monitor_card.innerHTML =
+        "<div class='description-text'>" +
+        "   <div class='description-title'>FazCO2Monitor</div>" +
+        "    Raspberry PiとMH-Z14Aを使った二酸化炭素濃度計です．<br>\n" +
+        "    現在の二酸化炭素濃度を表示するだけでなく，グラフ化してwebページから確認することもできます．また，二酸化炭素濃度が危険な値になるとメールで通知する機能もあります．<br><br>\n" +
+        "    ※使用する際はREADMEの手順に従って初期設定をしてください．<br>" +
+        "<div onclick='closeSlideDescription_FazCO2Monitor()' class='products-about-button'><span>戻る</span></div>" +
+        "</div>";
+}
+
+function closeSlideDescription_FazCO2Monitor(){
+    FazCO2Monitor_card.innerHTML = FazCO2Monitor_cardHtml;
 }

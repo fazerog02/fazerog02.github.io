@@ -54,6 +54,31 @@
     display: block;
 }
 
+#FazCO2Monitor-icon{
+    position: relative;
+    left: calc(50% - 150px);
+    height: 200px;
+    width: 200px;
+    margin: 50px;
+    border: 2px solid gray;
+    border-radius: 50%;
+    background-image: url("../img/FazCO2Monitor.png");
+    background-size: 100%;
+    transition: transform 300ms 0s ease, box-shadow 300ms 0s ease;
+}
+
+#FazCO2Monitor-icon:hover{
+    box-shadow: 0px 0px 16px 4px gray;
+    transform: scale(1.2, 1.2) rotateZ(10deg);
+}
+
+#FazCO2Monitor-icon a{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    display: block;
+}
+
 .description-title{
     font-size: 200%;
     border-bottom: 2px solid lightgray;
