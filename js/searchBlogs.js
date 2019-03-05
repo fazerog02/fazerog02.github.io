@@ -9,6 +9,11 @@ let blogList = [
         new Date(2019, 2, 27, 18, 1),
         "/blogs/2019_02_27_1801",
     ],
+    [
+        'FazCO2Monitor',
+        new Date(2019, 3, 5, 19, 22),
+        "blogs/2019_03_05_1922",
+    ],
 ];
 
 let searchResult_title = [], searchResult_url = [];
