@@ -4,6 +4,9 @@ var LiveEditHtml_cardHtml;
 let FazCO2Monitor_card = document.getElementById("FazCO2Monitor-card");
 var FazCO2Monitor_cardHtml;
 
+let aimDoctor_card = document.getElementById("aimDoctor-card");
+var aimDoctor_cardHtml;
+
 function openSlideDescription_LiveEditHtml(){
     LiveEditHtml_cardHtml = LiveEditHtml_card.innerHTML;
     LiveEditHtml_card.innerHTML =
@@ -37,4 +40,19 @@ function openSlideDescription_FazCO2Monitor(){
 
 function closeSlideDescription_FazCO2Monitor(){
     FazCO2Monitor_card.innerHTML = FazCO2Monitor_cardHtml;
+}
+
+function openSlideDescription_aimDoctor(){
+    aimDoctor_cardHtml = aimDoctor_card.innerHTML;
+    aimDoctor_card.innerHTML =
+        "<div class='description-text'>" +
+        "   <div class='description-title'>Aim Doctor</div>" +
+        "    fpsゲームなどで必要になるaim力を鍛えるサービスです．<br>\n" +
+        "    時間間隔や大きさをカスタマイズした的をクリックして遊びます．最後にはスコアも表示されます．<br>\n" +
+        "<div onclick='closeSlideDescription_aimDoctor()' class='products-about-button'><span>戻る</span></div>" +
+        "</div>";
+}
+
+function closeSlideDescription_aimDoctor(){
+    aimDoctor_card.innerHTML = aimDoctor_cardHtml;
 }
