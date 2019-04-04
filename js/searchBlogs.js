@@ -44,7 +44,7 @@ function searchBlogs(str){
         let blogHtml =
             `    <div class=\"content-card-title\">${searchResult_title[i]}</div>\n` +
             "    <div class=\"content-image-default\"></div>\n" +
-            `    <div class=\"content-button\"><a href=${searchResult_url}><span>見る</span></a></div>`;
+            `    <div class=\"content-button\"><a href=${searchResult_url[i]}><span>見る</span></a></div>`;
         blogArea.insertAdjacentHTML("afterbegin", blogHtml);
     }
 }
