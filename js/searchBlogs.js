@@ -42,9 +42,11 @@ function searchBlogs(str){
     console.log(blogArea.innerHTML);
     for(let i = 0; i < searchResult_title.length; i++){
         let blogHtml =
+            "    <div class=\"content-card\">\n" +
             `    <div class=\"content-card-title\">${searchResult_title[i]}</div>\n` +
             "    <div class=\"content-image-default\"></div>\n" +
-            `    <div class=\"content-button\"><a href=${searchResult_url[i]}><span>見る</span></a></div>`;
+            `    <div class=\"content-button\"><a href=${searchResult_url[i]}><span>見る</span></a></div>` +
+            "    </div>";
         blogArea.insertAdjacentHTML("afterbegin", blogHtml);
     }
 }
