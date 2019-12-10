@@ -7,6 +7,9 @@ var FazCO2Monitor_cardHtml;
 let aimDoctor_card = document.getElementById("aimDoctor-card");
 var aimDoctor_cardHtml;
 
+let sekigae_card = document.getElementById("sekigae-card");
+var sekigae_cardHtml;
+
 function openSlideDescription_LiveEditHtml(){
     LiveEditHtml_cardHtml = LiveEditHtml_card.innerHTML;
     LiveEditHtml_card.innerHTML =
@@ -55,4 +58,18 @@ function openSlideDescription_aimDoctor(){
 
 function closeSlideDescription_aimDoctor(){
     aimDoctor_card.innerHTML = aimDoctor_cardHtml;
+}
+
+function openSlideDescription_sekigae(){
+    sekigae_cardHtml = sekigae_card.innerHTML;
+    sekigae_card.innerHTML =
+        "<div class='description-text'>" +
+        "   <div class='description-title'>sekigae</div>" +
+       "        席替えができます！webなのでpdfで出力もできます！" +
+        "<div onclick='closeSlideDescription_sekigae()' class='products-about-button'><span>戻る</span></div>" +
+        "</div>";
+}
+
+function closeSlideDescription_sekigae(){
+    sekigae_card.innerHTML = sekigae_cardHtml;
 }

@@ -48,4 +48,4 @@
         "    <link rel='stylesheet' href='css/sidenav.css' type='text/css'>" +
         "    <link rel='stylesheet' href='/css/icons.css' type='text/css'>";
     head.insertAdjacentHTML('afterbegin', baseHeadContents);
-})()
+})();
