@@ -32,11 +32,6 @@
         "<a href=\"/about\">©2019 fazerog</a>";
     body.appendChild(footerSource);
 
-    let snowSource =
-        "<link rel=\"stylesheet\" href=\"css/snow.css\" type=\"text/css\">\n" +
-        "<script src=\"js/snow.js\" type=\"text/javascript\"></script>";
-    body.insertAdjacentHTML("beforeend", snowSource);
-
 
     let head = document.head;
     let baseHeadContents =
